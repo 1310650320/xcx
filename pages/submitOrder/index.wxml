@@ -1,0 +1,93 @@
+<view class="tView">
+  <block wx:if="{{hasLogin === false}}">
+    <view class="order_addSiteView">
+      <navigator class="addSiteView" url="/pages/site/index" hover-class="none" bindtap="navAction">
+        <image src="/static/images/order.png"></image>
+        <text>新增收货地址</text>
+      </navigator>
+      <image class="siteImg1" src="/static/images/order2.png"></image>
+    </view>
+  </block>
+  <!-- <button catchtap="navitositeAction">测试测试测试</button> -->
+  <block wx:if="{{hasLogin === true}}">
+    <view class="siteVi">
+      <view class="siteView" catchtap="navitositeAction">
+        <view class="siteB">
+          <view class="siteB1">
+            <image class="siteimg" src="/static/images/site.png"></image>
+            <text class="siteB1_text1">收 货 人:</text>
+            <view class="siteB1_1">
+              <text class="siteName">{{siteInfo.consignee}}</text>
+              <text class="sitePhone">{{siteInfo.mobile}}</text>
+            </view>
+          </view>
+          <view class="siteB2">
+            <text class="siteB2_addr">收货地址:</text>
+            <text class="siteB2Adres">{{siteInfo.province_name}}{{siteInfo.city_name}}{{siteInfo.district_name}}{{siteInfo.address}}</text>
+          </view>
+        </view>
+        <image class="siteC" src="/static/images/mine0.png"></image>
+      </view>
+      <image class="siteImg1" src="/static/images/order2.png"></image>
+    </view>
+  </block>
+</view>
+
+
+
+<!--商品列表-->
+<view class="order_listView" wx:if="{{!bonus_show&&!fav_show}}">
+  <view class="list_title">
+    <image src="/static/images/order3.png"></image>
+    <text>商品列表</text>
+  </view>
+  <view class="cellView" wx:for="{{goods}}" wx:key="key">
+    <image src="{{item.goods_images}}"></image>
+    <view class="list_rightView">
+      <view class="list_view1">
+        <text class="text1">{{item.goods_name}}</text>
+        <text class="text2">￥{{item.goods_price}}</text>
+      </view>
+      <view class="list_view2">
+        <text class="text3">{{item.goods_attr}}</text>
+        <text class="text4">X{{item.goods_number}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--配送方式留言-->
+<view class="messageView" wx:if="{{!bonus_show&&!fav_show}}">
+  <view class="dispatching">
+    <text class="text5">配送方式</text>
+    <picker bindchange="bindPickerChange" value="{{selindex}}" range="{{exprarray}}">
+      <view class="picker" style='font-size:15px;color:#a5a5a5;'>
+        {{exprarray[selindex]}}
+      </view>
+    </picker>
+    <!-- <text class="text6">{{express}}</text> -->
+  </view>
+  <view class="message">
+    <text class="text5">留言</text>
+    <input class="text6" type="text" bindblur="bindAction" placeholder="点击给商家留言" />
+  </view>
+</view>
+
+
+<!--金额运费-->
+<view class="moneyView" wx:if="{{!bonus_show&&!fav_show}}">
+  <view class="money">
+    <text class="text7">商品金额</text>
+    <text class="text8">￥{{total}}</text>
+  </view>
+  <view class="carriage">
+    <text class="text7">运费</text>
+    <text class="text8">￥{{shopping_fee}}</text>
+  </view>
+</view>
+
+<!--底部视图-->
+<view class="order_bottomView" wx:if="{{!bonus_show&&!fav_show}}">
+  <view class="bottom_left">合计：￥{{really_total}}</view>
+  <view class="payMoney" catchtap="payMoneyAction">去结算</view>
+</view>

@@ -1,0 +1,62 @@
+/* pages/shoppingTrolley/index.wxss */
+page{width: 100%; background-color: #f6f6f6;}
+
+.ttttView{width: 100%;}
+.tollery_none{width: 100%;margin-top: 200rpx;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+.tollery_none image{width: 327rpx;height: 253rpx;margin-bottom: 120rpx;}
+.tollery_none text{width: 100%;height: 30rpx;text-align: center;margin-bottom: 50rpx;color: #cacaca;font-size: 30rpx;}
+.tollery_none navigator{width: 270rpx;height: 88rpx;background-color: #f25a5d;color: #ffffff;text-align: center;line-height: 88rpx;border-radius: 8rpx;font-size: 34rpx;}
+
+
+.scroll{width: 100%;}
+.topView{height: 90rpx;width: 100%;display: flex;flex-direction: row;align-items: center;margin-top: 1rpx;margin-bottom: 15rpx;background-color: #ffffff;}
+.topView text{font-size: 26rpx;padding-left: 30rpx;}
+.text1{color: #848484;}
+.text2{color: #e12629;}
+
+
+.cellview{width: 100%;height: 310rpx;background-color: #ffffff;margin-bottom: 15rpx;}
+.cellcontentView{width: 690rpx;margin-left: 30rpx;height: 310rpx;display: flex;flex-direction: column;align-items: center;}
+/*上*/
+.t_view{width: 100%;height: 210rpx;display: flex;flex-direction: row;align-items: center;border-bottom: 1rpx solid #f6f6f6;}
+.checkView{width: 66rpx;height: 150rpx;display: flex;align-items: center;}
+.leftImg{width: 36rpx;height: 36rpx;}
+.comImg{width: 150rpx;height: 150rpx;}
+.rightView{max-width:225px;height: 150rpx;display: flex;flex-direction: column;justify-content: space-between;margin-left: 30rpx;}
+.text3{font-size: 27rpx;line-height: 30rpx;text-overflow: ellipsis;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;}
+.text4{font-size: 25rpx;color: #848484;line-height: 30rpx;text-overflow: ellipsis;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;}
+.text5{font-size: 25rpx;color: #e12629;line-height: 30rpx;}
+
+.B_view{width: 100%;height: 99rpx;display: flex;flex-direction: row;align-items: center;justify-content: space-between;}
+
+
+.commodityNumView{width: 240rpx;height: 60rpx;display: flex;flex-direction: row;border: 1rpx solid #e5e5e5;align-items: center;border-radius: 8rpx;}
+.disabled{width: 80rpx;height: 60rpx;color: #333333;line-height: 60rpx;text-align: center;background: #e5e5e5;pointer-events: none;}
+.normal{width: 80rpx;height: 60rpx;color: #333333;line-height: 60rpx;text-align: center;}
+
+.purchase_num{width: 80rpx;line-height: 60rpx;font-size: 25rpx;height: 60rpx;border-left:1rpx solid #e5e5e5;border-right: 1rpx solid #e5e5e5;text-align: center;}
+
+.cancleView{width: 148rpx;height: 58rpx;border: 1rpx solid #cacaca;color: #848484;border-radius: 8rpx;text-align: center;line-height: 58rpx;font-size: 28rpx;}
+
+/*底部结算*/
+.bottomView{width: 100%;height: 100rpx;display: flex;flex-direction: row;justify-content: space-between;align-items: center;background-color: #ffffff;position: fixed;bottom: 0;}
+.leView{margin-left: 30rpx;display: flex;flex-direction: row;align-items: center;}
+.leView image{width: 36rpx;height: 36rpx;}
+.leView text{font-size: 28rpx;padding-left: 30rpx;}
+
+.rigView{height: 100rpx;display: flex;flex-direction: row;align-items: center;}
+.cenView{display: flex;flex-direction: column;justify-content: flex-end;align-items: flex-end;}
+.text6{font-size: 27rpx;color: #e12629;line-height: 40rpx;}
+.text7{font-size: 23rpx;color: #848484;}
+.righView{width: 250rpx;height: 100rpx;text-align: center;line-height: 100rpx;background-color: #e12629;color: #ffffff;margin-left: 30rpx;}
+.righNoView{width: 250rpx;height: 100rpx;text-align: center;line-height: 100rpx;background-color: #848484;color: #ffffff;margin-left: 30rpx;pointer-events: none;}

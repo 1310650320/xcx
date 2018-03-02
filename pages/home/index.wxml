@@ -1,0 +1,57 @@
+<view class="home_topView">
+  <swiper class='TopViewSwiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+     <block wx:for="{{bannerList}}" wx:key="*this"> 
+      <swiper-item>
+        <image src="{{item.ad_code}}" class="slide-image" />
+      </swiper-item>
+     </block> 
+  </swiper>
+</view>
+
+<view class="home_tabView">
+  <navigator wx:for="{{categoryList}}" class="tab1" hover-class="none" url="/pages/home/classify/index?catid={{item.cat_id}}">
+    <image src="{{item.cat_image}}"></image>
+    <text>{{item.cat_name}}</text>
+  </navigator>
+  <navigator class="tab1" hover-class="none" url="/pages/home/classify/index">
+    <image src="/static/imgs/indexIcon4.png"></image>
+    <text>查看分类</text>
+  </navigator>
+</view>
+
+
+<block wx:for="{{product}}" wx:for-item="itemm">
+  <text class="home_recommend" wx:if="{{itemm.goods!=0}}">{{itemm.cat_name}}</text>
+  <text class="home_recommend1" wx:if="{{itemm.goods!=0}}">~{{itemm.keywords}}~</text>
+  <view class="btoView">
+    <navigator class="home_productView" hover-class="none" url="/pages/product/show/index?id={{item.goods_id}}"  wx:for="{{itemm.goods}}" wx:key="key">
+      <image class="product_img1" mode="aspectFill" src="{{item.original_img}}"></image>
+      <view class="rightView">
+        <text class="product_text1">{{item.goods_name}}</text>
+        <text class="product_text3" wx:if="{{item.keywords!=''}}">{{item.keywords}}</text>
+        <text class="product_text2">￥{{item.shop_price}}/<text class='product_text4'>{{item.danwei}}</text><text class='tuijianwords'>{{item.is_best=='1'?'精品':(item.is_new=='1'?'新品':(item.is_hot=='1'?'热销':''))}}</text></text>
+      </view> 
+    </navigator>
+</view>
+
+
+ </block>
+
+<!-- 
+<view class='colBlackView'></view>
+<text class="home_recommend">咖啡</text>
+<text class="home_recommend1">~{{keywords[1]}}~</text>
+<view class="btoView">
+  <navigator class="home_productView" hover-class="none" url="/pages/product/show/index?id={{item.goods_id}}"  wx:for="{{productkafei}}" wx:key="key">
+    <image class="product_img1" src="{{item.original_img}}"></image>
+    <view class="rightView">
+      <text class="product_text1">{{item.goods_name}}</text>
+      <text class="product_text3" wx:if="{{item.keywords!=''}}">{{item.keywords}}</text>
+     <text class="product_text2">￥{{item.shop_price}}<text class='tuijianwords'>{{item.is_best=='1'?'精品':(item.is_new=='1'?'新品':(item.is_hot=='1'?'热销':''))}}</text></text>
+    </view> 
+  </navigator>
+</view> -->
+
+
+<import src="../../common/footer.wxml" />
+<template is="footer_ugo" />

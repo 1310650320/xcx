@@ -1,0 +1,8 @@
+ /* @import "/wxParse/wxParse.wxss";  */
+.mine_bottomView_ugo{width: 100%;background-color:#fff;
+display:flex;flex-direction: row;padding-bottom:30rpx;
+justify-content: space-around;align-items: center;padding-top: 15rpx;}
+.mine_bottomView_ugo image{width:263rpx;height:173rpx;}
+.mine_bottomView_ugo text{width:444rpx;font-size: 24rpx;color: #bfbfc3;}
+
+

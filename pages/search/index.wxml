@@ -1,0 +1,21 @@
+<view class="topView">
+  <view class="left">
+    <image src="/static/images/search.png"></image>
+    <input type="text" placeholder="请输入商品名" placeholder-style="font-size: 27rpx" bindblur="bindAction"/>
+  </view>
+  <view class="riView" catchtap="searchAction">搜索</view>
+</view>
+
+<view class="noneVIew" style="display:{{nullTopno}}">目前无此商品！</view>
+<view class="classname" style="display:{{nullBotno}}">
+<scroll-view class="scrollVIew" scroll-y="true" style="height: 1082rpx;">   
+  <navigator class="home_productView" hover-class="none" url="/pages/product/show/index?id={{item.goods_id}}" wx:for="{{product}}" wx:key="key">
+    <image class="product_img1" src="{{item.goods_img}}"></image>
+    <view class="rightView">
+      <text class="product_text1">{{item.goods_name}}</text>
+      <text class="product_text2">￥{{item.shop_price}}</text>
+      <text class="product_text3">立即购买</text>
+    </view>
+  </navigator>
+</scroll-view>
+</view>

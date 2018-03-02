@@ -1,0 +1,119 @@
+/* pages/home/classify/index.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.classify_topSearch {
+  width: 100%;
+  height: 98rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1rpx solid #f6f6f6;
+  border-bottom: 1rpx solid #f6f6f6;
+  background-color: #fff;
+}
+
+.classify_topSearch image {
+  width: 690rpx;
+  height: 70rpx;
+}
+
+.classify_centerView {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.leftView {
+  width: 170rpx;
+  height: 908rpx;
+  background-color: #f6f6f6;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.rightView {
+  width: 580rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.left_item {
+  width: 160rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 27rpx;
+  color: #333;
+  border-left: 10rpx solid #f6f6f6;
+}
+
+.left_item_sel {
+  width: 160rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 27rpx;
+  color: #f25a5d;
+  border-left: 10rpx solid #f25a5d;
+  background-color: #fff;
+}
+
+.right_TopTitle {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 27rpx;
+  color: #333;
+  font-weight: bold;
+  padding-left: 30rpx;
+}
+
+.right_itemView {
+  width: 580rpx;
+   display: flex;
+    padding-bottom:30px;
+  flex-direction: row;
+   /* align-items: center; */
+  /* justify-content: space-around;  */
+  flex-wrap: wrap;
+   /* align-content: space-between; */
+}
+
+.right_item {
+  width: 100%;
+  height:320rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  flex-grow: 0; 
+  flex-shrink: 1; 
+  background-color: #f7f7f7;
+  border-radius: 10rpx;
+}
+
+.right_item image {
+  width: 100% !important;
+  height: 254rpx !important;
+  border-radius:10rpx;
+}
+
+.right_item text {
+  width:100%;
+  font-size:30rpx;
+  height:60rpx;
+  line-height:60rpx;
+  text-align:left;
+  padding-left:27px;
+}

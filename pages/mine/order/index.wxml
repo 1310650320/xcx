@@ -1,0 +1,263 @@
+<view class="topView">
+  <view data-sel="{{index}}" class="{{index==sel?'btnselView':'btnView'}}" wx:for="{{topArr}}" wx:key="key" bindtap="clickBtnViewAction">
+    <text data-sel="{{index}}" class="{{index==sel?'btnselText':'btnText'}}">{{item}}</text>
+  </view>
+</view>
+
+<!--分页视图-->
+<view class="pageView">
+
+  <block wx:if="{{sel == 0}}">
+    <view class="view_1">
+      <!--  全部订单 -->
+      <!-- 待付款  -->
+      <view class="payView" wx:for="{{waitPay}}" wx:key="key">
+        <view class="view1">
+          <text class="view1_text1">订单编号：{{item.order_sn}}</text>
+          <text class="view1_text2">待付款</text>
+        </view>
+         <navigator url="{{item.url}}">
+        <view class="view2" wx:for="{{item.item}}" wx:key="key">
+          <image src="{{item.img}}"></image>
+          <view class="rView">
+            <view class="r_view1">
+              <text class="r_view1_text1">{{item.goods_name}}</text>
+              <text class="r_view1_text2">￥{{item.goods_price}}</text>
+            </view>
+            <view class="r_view2">
+              <text class="r_view2_text1">{{item.goods_attr}}</text>
+              <text class="r_view2_text2">X{{item.goods_number}}</text>
+            </view>
+          </view>
+        </view>
+         </navigator>
+        <view class="view3">
+          <text class="view3_text1">合计:<text class="view3_text2">￥{{item.total_fee}}</text></text>
+        </view>
+        <view class="view4">
+          <view class="view4_can" data-id="{{item.order_id}}" catchtap="cancleAction">取消</view>
+          <view class="view4_con" data-url="{{item.url}}" catchtap="pageSkipAction">去付款</view>
+        </view>
+      </view>
+      <!-- 待发货  -->
+
+      <navigator class="payView" wx:for="{{waitDeliver}}" wx:key="key" url="{{item.url}}" hover-class="none">
+        <view class="view1">
+          <text class="view1_text1">订单编号：{{item.order_sn}}</text>
+          <text class="view1_text2">等待卖家发货</text>
+        </view>
+        <view class="view2" wx:for="{{item.item}}" wx:key="key">
+          <image src="{{item.img}}"></image>
+          <view class="rView">
+            <view class="r_view1">
+              <text class="r_view1_text1">{{item.goods_name}}</text>
+              <text class="r_view1_text2">￥{{item.goods_price}}</text>
+            </view>
+            <view class="r_view2">
+              <text class="r_view2_text1">{{item.goods_attr}}</text>
+              <text class="r_view2_text2">X{{item.goods_number}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="view3"> <text class="view3_text1">合计:<text class="view3_text2">￥{{item.total_fee}}</text></text></view>
+      </navigator>
+
+
+
+      <!-- 待收货  -->
+      <view class="payView" wx:for="{{waitTake}}" wx:key="key">
+        <view class="view1">
+          <text class="view1_text1">订单编号：{{item.order_sn}}</text>
+          <text class="view1_text2">待收货</text>
+        </view>
+         <navigator url="{{item.url}}">
+        <view class="view2" wx:for="{{item.item}}" wx:key="key">
+          <image src="{{item.img}}"></image>
+          <view class="rView">
+            <view class="r_view1">
+              <text class="r_view1_text1">{{item.goods_name}}</text>
+              <text class="r_view1_text2">￥{{item.goods_price}}</text>
+            </view>
+            <view class="r_view2">
+              <text class="r_view2_text1">{{item.goods_attr}}</text>
+              <text class="r_view2_text2">X{{item.goods_number}}</text>
+            </view>
+          </view>
+        </view>
+         </navigator>
+        <view class="view3">
+          <text class="view3_text1">合计:<text class="view3_text2">￥{{item.total_fee}}</text></text>
+        </view>
+        <view class="view4">
+          <view class="view4_can" data-url="{{item.url}}" catchtap="pageSkipAction">查看物流</view>
+          <view class="view4_con" data-url="{{item.url}}" catchtap="pageSkipAction">确认收货</view>
+        </view>
+      </view>
+      <view class="payView" wx:for="{{complete}}" wx:key="key">
+        <view class="view1">
+          <text class="view1_text1">订单编号：{{item.order_sn}}</text>
+          <text class="view1_text2">已完成</text>
+        </view>
+         <navigator url="{{item.url}}">
+        <view class="view2" wx:for="{{item.item}}" wx:key="key">
+          <image src="{{item.img}}"></image>
+          <view class="rView">
+            <view class="r_view1">
+              <text class="r_view1_text1">{{item.goods_name}}</text>
+              <text class="r_view1_text2">￥{{item.goods_price}}</text>
+            </view>
+            <view class="r_view2">
+              <text class="r_view2_text1">{{item.goods_attr}}</text>
+              <text class="r_view2_text2">X{{item.goods_number}}</text>
+            </view>
+          </view>
+        </view>
+         </navigator>
+        <view class="view3">
+          <text class="view3_text1">合计:<text class="view3_text2">￥{{item.total_fee}}</text></text>
+        </view>
+        <view class="view4">
+          <view class="view4_can" data-id="{{item.order_id}}" catchtap="logisticsAction">查看物流</view>
+          <view class="view4_con" data-id="{{item.order_id}}" catchtap="deleteAction">删除</view>
+        </view>
+      </view>
+      <import src="../../../common/footer.wxml" />
+      <template is="footer_ugo" />
+
+    </view>
+  </block>
+  <block wx:if="{{sel == 1}}">
+    <view class="view_2">
+
+      <!-- 待付款  -->
+      <view class="payView" wx:for="{{waitPay}}" wx:key="key">
+        <view class="view1">
+          <text class="view1_text1">订单编号：{{item.order_sn}}</text>
+          <text class="view1_text2">待付款</text>
+        </view>
+
+        <navigator url="{{item.url}}">
+        <view class="view2" wx:for="{{item.item}}" wx:key="key">
+          <image src="{{item.img}}"></image>
+          <view class="rView">
+            <view class="r_view1">
+              <text class="r_view1_text1">{{item.goods_name}}</text>
+              <text class="r_view1_text2">￥{{item.goods_price}}</text>
+            </view>
+            <view class="r_view2">
+              <text class="r_view2_text1">{{item.goods_attr}}</text>
+              <text class="r_view2_text2">X{{item.goods_number}}</text>
+            </view>
+          </view>
+        </view>
+        </navigator>
+        <view class="view3">
+          <text class="view3_text1">合计:<text class="view3_text2">￥{{item.total_fee}}</text> </text>
+        </view>
+        <view class="view4">
+          <view class="view4_can" data-id="{{item.order_id}}" catchtap="cancleAction">取消</view>
+          <view class="view4_con" data-url="{{item.url}}" catchtap="pageSkipAction">去付款</view>
+        </view>
+      </view>
+      <import src="../../../common/footer.wxml" />
+      <template is="footer_ugo" />
+    </view>
+  </block>
+  <block wx:if="{{sel == 2}}">
+    <view class="view_3">
+      <!-- 待发货  -->
+      <navigator class="payView" wx:for="{{waitDeliver}}" wx:key="key" hover-class="none" url="{{item.url}}">
+        <view class="view1">
+          <text class="view1_text1">订单编号：{{item.order_sn}}</text>
+          <text class="view1_text2">等待卖家发货</text>
+        </view>
+        <view class="view2" wx:for="{{item.item}}" wx:key="key">
+          <image src="{{item.img}}"></image>
+          <view class="rView">
+            <view class="r_view1">
+              <text class="r_view1_text1">{{item.goods_name}}</text>
+              <text class="r_view1_text2">￥{{item.goods_price}}</text>
+            </view>
+            <view class="r_view2">
+              <text class="r_view2_text1">{{item.goods_attr}}</text>
+              <text class="r_view2_text2">X{{item.goods_number}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="view3">
+          <text class="view3_text1">合计:<text class="view3_text2">￥{{item.total_fee}}</text></text>
+        </view>
+      </navigator>
+      <import src="../../../common/footer.wxml" />
+      <template is="footer_ugo" />
+    </view>
+  </block>
+  <block wx:if="{{sel == 3}}">
+    <view class="view_4">
+      <!-- 待收货  -->
+      <view class="payView" wx:for="{{waitTake}}" wx:key="key">
+        <view class="view1">
+          <text class="view1_text1">订单编号：{{item.order_sn}}</text>
+          <text class="view1_text2">待收货</text>
+        </view>
+        <navigator url="{{item.url}}">
+          <view class="view2" wx:for="{{item.item}}" wx:key="key">
+            <image src="{{item.img}}"></image>
+            <view class="rView">
+              <view class="r_view1">
+                <text class="r_view1_text1">{{item.goods_name}}</text>
+                <text class="r_view1_text2">￥{{item.goods_price}}</text>
+              </view>
+              <view class="r_view2">
+                <text class="r_view2_text1">{{item.goods_attr}}</text>
+                <text class="r_view2_text2">X{{item.goods_number}}</text>
+              </view>
+            </view>
+          </view>
+        </navigator>
+        <view class="view3">
+          <text class="view3_text1">合计: <text class="view3_text2">￥{{item.total_fee}}</text></text>
+        </view>
+        <view class="view4">
+          <view class="view4_can" data-url="{{item.url}}" catchtap="pageSkipAction">查看物流</view>
+          <view class="view4_con" data-url="{{item.url}}" catchtap="pageSkipAction">确认收货</view>
+        </view>
+      </view>
+      <import src="../../../common/footer.wxml" />
+      <template is="footer_ugo" />
+    </view>
+  </block>
+  <block wx:if="{{sel == 4}}">
+    <view class="view_5">
+      <!--  已完成  -->
+      <view class="payView" wx:for="{{complete}}" wx:key="key">
+        <view class="view1">
+          <text class="view1_text1">订单编号：{{item.order_sn}}</text>
+          <text class="view1_text2">已完成</text>
+        </view>
+        <view class="view2" wx:for="{{item.item}}" wx:key="key">
+          <image src="{{item.img}}"></image>
+          <view class="rView">
+            <view class="r_view1">
+              <text class="r_view1_text1">{{item.goods_name}}</text>
+              <text class="r_view1_text2">￥{{item.goods_price}}</text>
+            </view>
+            <view class="r_view2">
+              <text class="r_view2_text1">{{item.goods_attr}}</text>
+              <text class="r_view2_text2">X{{item.goods_number}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="view3">
+          <text class="view3_text1">合计:<text class="view3_text2">￥{{item.total_fee}}</text></text>
+        </view>
+        <view class="view4">
+          <view class="view4_can" data-id="{{item.order_id}}" catchtap="logisticsAction">查看物流</view>
+          <view class="view4_con" data-id="{{item.order_id}}" catchtap="deleteAction">删除</view>
+        </view>
+      </view>
+      <import src="../../../common/footer.wxml" />
+      <template is="footer_ugo" />
+    </view>
+  </block>
+</view>

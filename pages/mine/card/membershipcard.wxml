@@ -1,0 +1,48 @@
+<view class="Card" wx:if="{{ishaveCard=='1'}}">
+  <view class='cardView'>
+   <image class='cardImg' src='{{cardInfo.file_url}}'></image>
+    <text class='cardViewTxt1'>{{cardInfo.title}}</text>
+    <text class='cardViewTxt2'>持本卡</text>
+    <text class='cardViewTxt3'>可参与我们的优惠活动</text>
+    <text class='cardViewTxt4'>持卡人： <text class='cardOwner'>{{userInfo.name}}</text> </text>
+  </view>
+ <image class='cardLine' src='/static/imgs/images/cardline.jpg'></image>
+  <view class='cardInfo'>
+    <view class='infoLeft'>
+      <text>性别</text>
+      <text>手机号</text>
+      <text>生日</text>
+      <text>开卡日期</text>
+    </view>
+    <view class='infoRight'>
+      <text>{{userInfo.name}}</text>
+      <text>{{userInfo.mobile}}</text>
+      <text>{{userInfo.birthday}}</text>
+      <text>{{userInfo.add_time}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='noCard' wx:if="{{ishaveCard=='0'}}">
+ <view class='cardView'>
+   <image class='cardImg1'  src='{{cardInfo.file_url}}'></image>
+    <text class='cardViewTxt1'>{{cardInfo.title}}</text>
+    <text class='cardViewTxt2'>持本卡</text>
+    <text class='cardViewTxt3'>可参与我们的优惠活动</text>
+  </view>
+  <!-- <image class='cardImg1' src='/static/imgs/txtCard.jpg'></image> -->
+  <view class='InfomationView'>
+    <!-- <text class='infoTitle'>会员卡介绍</text> -->
+    <import src="../../../wxParse/wxParse.wxml"/> 
+       <!-- <view class="liInfo">  -->
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+       <!-- </view>  -->
+    <!-- <text class='liInfo'>拥有会员卡可以参加店内活动，拥有会员卡可以参加店内活动</text>
+     <text class='liInfo'>拥有会员卡可以参加店内活动，拥有会员卡可以参加店内活动</text>
+    <text class='liInfo'>拥有会员卡可以参加店内活动，拥有会员卡可以参加店内活动</text>
+    <text class='liInfo'>拥有会员卡可以参加店内活动，拥有会员卡可以参加店内活动</text> -->
+  </view>
+  <view class='btnKaikaWrap'>
+    <button class='kaiKaBtn' catchtap='GetCardAction'>去开卡</button>
+  </view>
+</view>

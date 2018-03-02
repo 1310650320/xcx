@@ -1,0 +1,6 @@
+<template name="footer_ugo">
+<view class="mine_bottomView_ugo">
+  <image src="/static/imgs/logo.jpg"></image>
+  <text>Mo.Sir 墨先生秉承着墨家文化“兼爱”“非命”“尚同”的文化理念，经历10余年的价值氛围深究，集鲜花、咖啡、培训、手作等多种融合式产品为一体的“造艺空间”</text>
+</view>
+</template> 

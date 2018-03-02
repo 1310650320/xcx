@@ -1,0 +1,51 @@
+{
+  
+  "pages": [
+    "pages/home/index",
+    "pages/product/show/index",
+    "pages/search/index",
+    "pages/submitOrder/index",
+    "pages/site/index",
+    "pages/home/classify/index",
+    "pages/home/commodity/index",
+    "pages/shoppingTrolley/index",
+    "pages/mine/index",
+    "pages/mine/order/index",
+    "pages/mine/waitpay/index",
+    "pages/mine/company/index",
+    "pages/mine/card/membershipcard",
+    "pages/mine/card/cardapply/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "loading",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#f8c874",
+    "borderStyle": "e5e5e5",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/index",
+        "iconPath": "static/imgs/tab1.jpg",
+        "selectedIconPath": "static/imgs/tab1a.jpg"
+      },
+      {
+        "text": "购物车",
+        "pagePath": "pages/shoppingTrolley/index",
+        "iconPath": "static/imgs/tab2.jpg",
+        "selectedIconPath": "static/imgs/tab2a.jpg"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/index",
+        "iconPath": "static/imgs/tab3.jpg",
+        "selectedIconPath": "static/imgs/tab3a.jpg"
+      }
+    ]
+  }
+}

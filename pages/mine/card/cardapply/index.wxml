@@ -1,0 +1,30 @@
+<view class="formView">
+  <input bindinput='NameInput' value="{{name}}" placeholder="请输入姓名"  />
+  <picker class='datepicker' mode="date" value="{{birthday}}" start="1960-01-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      点击选择您的生日: {{date}}
+    </view>
+  </picker>
+  <!-- <input bindinput='BirthdayInput' value="{{birthday}}" placeholder="请输入您的生日（如1990-02-11）" /> -->
+  <input bindinput='PhoneInput' value="{{phone}}" placeholder="记录您的手机号"  />
+  <view class='checkView'>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio color="#f9c56f" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+</view>
+<button class='applyBtn' catchtap='applyAction'>立即申领</button>
+
+<view class='blackview' wx:if="{{blackshow}}"></view>
+<view class='codeWrap'  wx:if="{{blackshow}}">
+  <text class='codetxt1'>请输入图片验证码（区分大小写）</text>
+  <view class='codeline'></view>
+   <input class='codeinp' bindinput='codeInput' value="{{code}}" placeholder="请输入验证码"  />
+   <image class='codeImage' src='{{codeImage}}' bindtap='switchCodeImg'></image>
+   <view class='btnView'>
+      <button class="btn1" bindtap='ApplyYes'>确定</button>
+      <button class="btn2" bindtap='calcelaction'>返回</button>
+   </view>
+</view>

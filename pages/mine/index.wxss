@@ -1,0 +1,16 @@
+/* pages/mine/index.wxss */
+page{width: 100%;height: 100%;background-color: #f6f6f6;display: flex;flex-direction: column;align-items: center;}
+.mine_topView{width: 100%;height: 200rpx;background-color: #f25a5d;display: flex;flex-direction: row;align-items: center;}
+.mine_topView image{width: 120rpx;height: 120rpx;border-radius: 50%;margin-left: 65rpx;}
+.mine_topView text{font-size: 33rpx;color: #ffffff;padding-left: 35rpx;}
+
+.mine_nav{width: 100%;height: 98rpx;display: flex;flex-direction: row;justify-content: space-between;align-items: center;background-color: #ffffff;margin-top: 3rpx;}
+.nav_view{padding-left: 30rpx;display: flex;flex-direction: row;align-items: center;}
+.mine_img1{width: 32rpx;height: 30rpx;}
+.nav_view text{font-size: 30rpx;padding-left: 25rpx;}
+.mine_img2{width: 17rpx;height: 31rpx;margin-right: 30rpx;}
+.contactbutton{width: 100%;margin: 0rpx;padding: 0rpx;background-color: #ffffff;border: 0rpx;border-radius: 0rpx;} 
+button[class='contactbutton']::after{border: 0rpx;} 
+.mine_nav1{margin-bottom: 14rpx;}
+.intView{margin-bottom: 20rpx;}
+.intT{padding-right: 30rpx;color: red;font-size: 30rpx;}

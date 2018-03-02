@@ -1,0 +1,24 @@
+<!--pages/home/classify/index.wxml-->
+<navigator url="/pages/search/index" class="classify_topSearch">
+  <image src="/static/images/search2.png"></image>
+</navigator>
+
+<view class="classify_centerView" style="height: {{height}};">
+  <scroll-view class="leftView" scroll-y="true" style="height: {{height}};">
+    <view data-left="{{index}}" data-id="{{item.cat_id}}" class="{{index==left?'left_item_sel':'left_item'}}" wx:for="{{leftListData}}" wx:key="key" bindtap="left_itemSelectAction">{{item.cat_name}} </view>
+  </scroll-view>
+
+
+  <scroll-view class="rightView" scroll-y="true" style="height: 100%;" bindscrolltolower="lowerAction">
+    <text class="right_TopTitle">{{rightTitle}}</text>
+    <view class="right_itemView">
+      <!-- <navigator class="right_item" url="/pages/home/commodity/index?id={{item.cat_id}}" hover-class="none" wx:for="{{rightData}}" wx:key="key"> -->
+      <view class="right_item" catchtap='redirectCom' data-id="{{item.goods_id}}" hover-class="none" wx:for="{{rightData}}" wx:key="key">
+        <image src="{{item.goods_img}}" class="right_img"></image>
+        <text>{{item.goods_name}}</text>
+      </view>
+      <!-- </navigator> -->
+    </view>
+  </scroll-view>
+</view>
+<!-- url="/pages/home/commodity/index?id={{item.cat_id}}" -->

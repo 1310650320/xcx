@@ -1,0 +1,59 @@
+<!-- 购物车为空 -->
+<view class="ttttView">  
+ <block wx:if="{{emptyCar === true}}"> 
+  <view  class="tollery_none">
+    <image src="/static/images/tollery1.png"></image>
+    <text>购物车里什么都没有，赶快去购物吧~~</text>
+    <navigator openType="switchTab" url="/pages/home/index" hover-class="none">去购物</navigator>
+  </view>
+ </block>    
+      
+<block wx:if="{{emptyCar === false}}">   
+<!-- 购物车不为空  -->
+<view class="homeView">
+<scroll-view class="scroll" scroll-y="true" style="height: 1010rpx;">
+<view class="topView">
+  <text class="text1">共{{total_num}}件商品，总价（不含运费）:<text class="text2">￥{{total}}元</text></text>
+</view>
+
+<view class="cellview" wx:for="{{product}}" wx:key="key">
+<view class="cellcontentView" >
+  <view class="t_view" >
+    <view class="checkView" catchtap="checkOneAction" data-index="{{index}}">
+      <image src="{{item.select==1?'/static/images/shop.png' : '/static/images/none.png'}}" class="leftImg"></image>
+    </view>
+    <image mode="aspectFill" src="{{item.goods_images}}" class="comImg"></image>
+    <view class="rightView">
+    <text class="text3">{{item.goods_name}}</text>
+    <!-- <text class="text4">规格：{{item.goods_attr}}</text> -->
+    <text class="text5">￥{{item.goods_price}}</text>
+    </view>
+  </view>
+  <view class="B_view">
+    <view class="commodityNumView">
+      <view class="normal {{item.goods_number ==1? 'disabled' : ''}} || normal {{item.select===false? 'disabled' : ''}} || {{item.select===0? 'disabled' : ''}}"  bindtap="minusBtnAction" data-index="{{index}}">-</view>
+      <view class="purchase_num">{{item.goods_number}}</view>
+      <view class="normal {{item.select===false? 'disabled' : ''}} || {{item.select===0? 'disabled' : ''}}" bindtap="addBtnAction" data-index="{{index}}">+</view>
+    </view>
+    <view class="cancleView" data-index="{{index}}" catchtap="cancleAction">删除</view>
+  </view>
+</view>
+</view>
+</scroll-view>
+<!-- 底部视图 -->
+<view class="bottomView">
+  <view class="leView" catchtap="checkAllAction">
+    <image src="{{allSelect==1? '/static/images/shop.png' : '/static/images/none.png'}}"></image>
+    <text>全选</text>
+  </view>
+  <view class="rigView">
+    <view class="cenView">
+      <text class="text6">合计：￥{{total}}</text>
+      <text class="text7">不含运费</text>
+    </view>
+    <view class="{{1? 'righView' : 'righNoView'}}" disabled="{{1? 'false' : 'true'}}" catchtap="accountsAction">立即结算</view>
+  </view>
+</view>
+</view>
+   </block>   
+  </view>  

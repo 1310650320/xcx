@@ -1,0 +1,69 @@
+<view class="classname">
+  <block wx:if="{{addSite === true}}">
+    <view class="listSiteView">
+      <view class="listSite" wx:for="{{siteListDa}}" wx:key="key">
+        <view class="listSite_selV" catchtap="selAddressAction" data-selindex="{{index}}">
+          <image src="{{index == selimg?'/static/images/shop.png':'/static/images/none.png'}}"></image>
+        </view>
+        <view class="siteList_RV" catchtap="selAddressAction"  data-selindex="{{index}}">
+          <view class="RV_top">
+            <text>{{item.consignee}}，{{item.mobile}}</text>
+          </view>
+          <text class="RV_text2">{{item.country_name}}{{item.province_name}}{{item.city_name}}{{item.district_name}}{{item.address}}</text>
+        </view>
+        <view style='width:80rpx;height:100rpx;' catchtap="editAction" data-selindex="{{index}}">
+         <image src="/static/images/site1.png" style='display:block;margin-top:30rpx;'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="sitelistBto" catchtap="addNewSiteAction">新增收货地址</view>
+
+  </block>
+  <block wx:if="{{addSite === false}}">
+    <form class="siteView">
+      <view class="consigneeView">
+        <text class="left_title">收货人</text>
+        <input class="right_title" bindblur="nameAction" type="text" value="{{name}}" placeholder="姓名" />
+      </view>
+      <view class="consigneeView">
+        <text class="left_title">联系电话</text>
+        <input class="right_title" bindblur="phoneAction" type="text" value="{{phone}}" placeholder="电话" />
+      </view>
+
+      <picker bindchange="bindProvinceChange" value="{{index}}" range="{{province}}">
+        <view class="consigneeView">
+          <text class="left_title">省</text>
+          <text class="right_title text3">{{curr_pro}}</text>
+        </view>
+      </picker>
+      <picker bindchange="cityAction" value="{{index}}" range="{{city}}" disabled="{{boolCity}}">
+        <view class="consigneeView">
+          <text class="left_title">市</text>
+          <text class="right_title text3">{{curr_cit}}</text>
+        </view>
+      </picker>
+
+      <picker bindchange="countyAction" value="{{index}}" range="{{country}}" disabled="{{boolCoun}}">
+        <view class="consigneeView">
+          <text class="left_title">区/县</text>
+          <text class="right_title text3">{{curr_cou}}</text>
+        </view>
+      </picker>
+
+      <view class="consigneeView">
+        <text class="left_title">详细地址</text>
+        <input class="right_title" bindblur="siteDetailAction" type="text" value="{{addressDetail}}" placeholder="详细地址" />
+      </view>
+      <view class="labelView">
+        <text class="bottomLabel">详细地址需填写楼栋楼层或房间号信息</text>
+      </view>
+      <view class="btnView">
+        <button class="confirmBtn" bindtap="confirmAction">确认</button>
+      </view>
+      <view class="btnView">
+        <button class="cancleBtn" bindtap="cancleAction">删除收货地址</button>
+      </view>
+    </form>
+  </block>
+</view>

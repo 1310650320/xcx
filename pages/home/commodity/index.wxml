@@ -1,0 +1,13 @@
+<!--pages/home/commodity/index.wxml-->
+<navigator url="/pages/search/index" class="commodity_topSearch">
+  <image src="/static/images/search2.png"></image>
+</navigator>
+
+<view class="commodity_centerView">
+
+  <navigator class="commodity_itemView" url="/pages/product/show/index?id={{item.goods_id}}" hover-class="none" wx:for="{{shop}}" wx:key="key">
+    <image src="{{item.goods_img}}"></image>
+    <text class="text1">{{item.goods_name}}</text>
+    <text class="text2">￥{{item.shop_price}}</text>
+  </navigator>
+</view>

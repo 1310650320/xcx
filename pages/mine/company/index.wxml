@@ -1,0 +1,39 @@
+<view class="map_view">
+      <map
+        style="width: 100%; height: 360rpx;"
+        latitude="{{markers[0].latitude}}"
+        longitude="{{markers[0].longitude}}"
+        markers="{{markers}}"
+        bindmarkertap="markerAction"
+        >
+      </map>
+</view>
+
+<!--show-location="true"-->
+
+<view class="bigView">
+  <view class="hairView">
+    <view class="topView">
+      <text>{{info.company}}</text>
+        <image bindtap="phoneAction" data-phone="{{info.phone}}" src="/static/images/contact.png"></image> 
+      
+    </view>
+    <view class="view1 view2">
+      <image src="/static/images/contact2.png"></image>
+      <text>{{info.contact}}<text>{{info.position}}</text></text>
+    </view>
+    <view class="view1">
+      <image src="/static/images/contact3.png"></image>
+      <text>{{info.phone}}</text>
+    </view>
+    <view class="view1">
+      <image src="/static/images/contact4.png"></image>
+      <text>{{info.email}}</text>
+    </view>
+    <view class="view1">
+      <image src="/static/images/contact5.png"></image>
+      <text>{{info.companyaddr}}</text>
+    </view>
+    
+  </view>
+</view>

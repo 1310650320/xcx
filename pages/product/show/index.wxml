@@ -1,0 +1,78 @@
+<view class="detail_swiper">
+ <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image mode='aspectFill' src="{{item}}" class="slide-image" width="355" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="detail_title">
+  <text class="text1">{{detail.goods_name}}</text>
+  <!-- {{detail.goods_number}} 可能更改的内容-库存数量-->
+  <text class="text2">￥<text class="text2_t">{{detail.shop_price}}</text><text class="text3">已售出{{detail.set_sale_count}}|库存{{detail.goods_number}}</text></text>  
+</view>
+
+<view class="detail_norms" bindtap="showModal">
+  <text>选择：数量</text>
+  <image src="/static/images/mine0.png"></image>
+</view>
+
+<view class="detail_Detail">
+  <import src="../../../wxParse/wxParse.wxml"/> 
+	  <view class="text5">
+	  <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+	  </view>
+</view>
+
+<view class="detail_bottomView">
+  <view class="leftView">
+    <navigator class="detail_home" openType="switchTab" url="/pages/home/index" hover-class="none">
+      <image src="/static/images/tab1.png"></image>
+      <text>首页</text>
+    </navigator>
+    <navigator class="detail_home detail_home1" openType="reLaunch" url="/pages/shoppingTrolley/index" hover-class="none">
+      <image src="{{shopCarImg}}"></image>
+      <text>购物车</text>
+    </navigator>
+  </view>
+  <view class="rightView">
+    <view class="shopping_tollery" catchtap="showModal">加入购物车</view>
+    <view class="shopping_buy" catchtap="showModal">立即购买</view>
+  </view>
+</view>
+
+<!--弹出视图-->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="pop_topView">
+    <view class="pop_topView_left">
+      <image class="top_img1" src="{{detail.original_img}}"></image>
+    <view class="top_titleView">
+      <text class="title_text1">{{detail.goods_name}}</text>
+      <text class="title_text2">￥{{price}}</text>
+    </view>
+    </view>
+    <image class="top_img2" src="/static/images/detail2.png" bindtap="hideModal"></image>
+  </view>
+
+  <view class="purchaseView">
+    <view class="purchase_leftView">
+      <text class="purchase_text1">购买数量：</text>
+      <text class="purchase_text2">剩余{{detail.goods_number}}件</text>
+    </view>
+    <view class="commodityNumView">
+      <view class="{{minusBtn}}" bindtap="minusBtnAction">-</view>
+      <input class="purchase_num" type="number" bindblur="bindManual" value="{{commodityNum}}"/>
+      <view class="addBtn" bindtap="addBtnAction">+</view>
+    </view>
+  </view>
+
+  <view class="pop_bottomView">
+    <view class="addToShoppingCart" catchtap="addShopCar">加入购物车</view>
+    <view class="pop_bottomView_navi" catchtap="buyAction">立即购买</view>
+  </view>
+</view>
+

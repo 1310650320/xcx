@@ -1,0 +1,161 @@
+page {
+  background-color: #fff;
+}
+
+.Card {
+  padding: 55rpx;
+  background-color: #ececec;
+  height:100vh;
+}
+
+.cardImg {
+  position: absolute;
+  height: 430rpx;
+  top: 0;
+  border-radius:24px;
+  left: 0;
+  width: 100%;
+}
+
+.cardView {
+  position: relative;
+  height: 350rpx;
+  border-radius: 50rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+  color: #fff;
+}
+
+.cardInfo {
+  height: 220rpx;
+  border-radius: 50rpx;
+  background-color: #fff;
+  padding: 35px;
+  font-size: 16px;
+}
+
+.cardViewTxt1 {
+  margin-top: 20rpx;
+  font-size: 44rpx;
+  margin-bottom: 20rpx;
+  z-index: 55;
+}
+
+.cardViewTxt2, .cardViewTxt3, .cardViewTxt4 {
+  z-index: 55;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  color: #fff0f0;
+}
+
+.cardLine {
+  width: 275rpx;
+  height: 7px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.infoLeft {
+  width: 200rpx;
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+
+.infoRight {
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+
+.infoLeft text {
+  margin-top: 10rpx;
+}
+
+.infoRight text {
+  margin-top: 10rpx;
+}
+
+/* 没有会员卡的情况 */
+
+.noCard {
+  /* width: 100%; */
+  padding: 55rpx;
+  padding-bottom:115px;
+}
+
+.cardImg1 {
+  /* width:640rpx;
+  border-radius: 45rpx;
+  height: 430rpx;
+  top: 0;
+  left: 0;
+  z-index: -10; */
+  position: absolute;
+  height: 430rpx;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius:24px;
+  box-shadow: 0px 8rpx 20rpx 8rpx #e0e0e0;
+}
+
+.cardImg1::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+.InfomationView {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80rpx;
+  align-items: center;
+  position: relative;
+  padding:20px;
+}
+
+.infoTitle {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top:20px;
+}
+
+.liInfo::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #f9c56f;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 12px;
+  margin-top: 6px;
+}
+
+.liInfo {
+  margin-left: 30px;
+  font-size: 16px;
+  margin-right: 20rpx;
+  margin-bottom: 15px;
+}
+.btnKaikaWrap{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding-bottom:60rpx;
+  background-color: #fff;
+  box-shadow:0px 0px 30px 20px #fff;
+}
+.kaiKaBtn{
+  width:80%;
+  background-color:#f9c56f;
+  left:0;
+  font-size:16px;
+  border-radius:33px;
+}

@@ -1,0 +1,110 @@
+
+  <view class="view1">
+    <view class="view1_T">
+      <image src="/static/images/pay1.png" class="leftImg"></image>
+      <text>订单编号：<text class="view1_T_text">{{info.order_sn}}</text> </text>
+    </view>
+    <text class="view1_Text">下单时间：{{info.formated_add_time}}</text>
+  </view>
+
+  <view class="statusView">
+    <view class="view2">
+      <image src="/static/images/pay2.png" class="leftImg"></image>
+      <text>订单状态： <text class="view2_text">{{status}}</text>  </text>
+    </view>
+    <text wx:if="{{countDown == true}}" class="statusView_text">{{countDownStr}}</text>
+  </view>
+
+
+  <!-- <view wx:if="{{logis == false}}" class="view3" catchtap="skipLogistics">
+    <view class="view3_L">
+      <view class="view1_T">
+        <image src="/static/images/pay3.png" class="leftImg"></image>
+        <text>物流配送： <text class="view1_T_text">物流最新信息展示</text>  </text>
+      </view>
+      <text class="view1_Text">{{info.formated_add_time}}</text>
+    </view>
+    <image src="/static/images/mine0.png" class="arrowImg"></image>
+  </view> -->
+
+  <view class="addressView">
+    <view class="view4">
+      <image src="/static/images/pay4.png" class="view4_img"></image>
+      <view class="view4_R">
+        <view class="view4_R_T">
+          <text>收 货 人 ： {{info.consignee}}</text>
+          <text>1521234123</text>
+        </view>
+        <view class="view4_R_B">
+          <text class="view4_R_B_text1">收货地址：</text>
+          <text class="view4_R_B_text2">{{info.province}}{{info.city}}{{info.district}}{{info.address}}</text>
+        </view>
+      </view>
+    </view>
+    <image src="/static/images/order2.png" class="view4_img2"></image>
+  </view>
+
+
+  <view class="view5">
+    <image src="/static/images/pay5.png"></image>
+    <text>商品列表</text>
+  </view>
+  <view class="cell_View" wx:for="{{product}}" wx:key="key">
+    <image src="{{item.goods_thumb}}"></image>
+    <view class="rView">
+      <view class="r_view1">
+        <text class="r_view1_text1">{{item.goods_name}}</text>
+        <text class="r_view1_text2">￥{{item.goods_price}}</text>
+      </view>
+      <view class="r_view2">
+        <text class="r_view2_text1">{{item.goods_attr}}</text>
+        <text class="r_view2_text2">X{{item.goods_number}}</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="view6">
+    <text class="view6_text1">配送方式</text>
+    <text class="view6_text2">{{info.shipping_name}}</text>
+  </view>
+  <view class="view7">
+    <text class="view7_text1">留言</text>
+    <!-- <view class="view7_R"> -->
+    <text class="view7_text3">{{info.postscript}}</text>
+    <!-- </view> -->
+  </view>
+
+  <view class="view6">
+    <text class="view6_text3">商品金额</text>
+    <text class="view6_text4">￥{{info.goods_amount}}</text>
+  </view>
+  <view class="view7 view7_ca">
+    <text class="view7_text1">运费</text>
+    <text class="view7_text2">￥{{info.shipping_fee}}</text>
+  </view>
+
+
+
+<view class="totalView">
+  <block wx:if="{{sel == 1}}">
+    <view class="view9">
+      <text class="view8_text1 view9_text">合计：<text class="view8_text2">￥{{info.total_fee}}</text> </text>
+      <view class="view9_button" catchtap="gotoPayAction">去付款</view>
+    </view>
+
+  </block>
+  <block wx:if="{{sel == 2}}">
+    <view class="view9">
+      <text class="view8_text1 view9_text">合计：<text class="view8_text2">￥{{info.total_fee}}</text>
+      </text>
+      <view class="view9_button" catchtap="confirmTakeAction">确认收货</view>
+    </view>
+
+  </block>
+  <block wx:if="{{sel == 3}}">
+    <view class="view8">
+      <text class="view8_text1">合计：<text class="view8_text2">￥{{info.total_fee}}</text></text>
+    </view>
+  </block>
+</view>

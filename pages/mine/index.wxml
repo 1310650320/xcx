@@ -1,0 +1,77 @@
+
+ <!-- <navigator url="pages/mine/person/index" hover-class="none" style='width:100%;'>  -->
+  <view class="mine_topView" catchtap='goPerson'>
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <text>{{userInfo.nickName}}</text>
+  </view>
+ <!-- </navigator>  -->
+
+
+
+<navigator url="/pages/mine/order/index" hover-class="none" class="mine_nav">
+  <view class="nav_view">
+    <image src="/static/images/mine1.png" class="mine_img1"></image>
+    <text>全部订单</text>
+  </view>
+  <image src="/static/images/mine0.png" class="mine_img2"></image>
+</navigator>
+<navigator hover-class="none" class="mine_nav" url="/pages/mine/order/index?skip=1">
+  <view class="nav_view">
+    <image src="/static/images/mine2.png" class="mine_img1"></image>
+    <text>待付款</text>
+  </view>
+  <image src="/static/images/mine0.png" class="mine_img2"></image>
+</navigator>
+<navigator url="/pages/mine/order/index?skip=2" hover-class="none" class="mine_nav">
+  <view class="nav_view">
+    <image src="/static/images/mine3.png" class="mine_img1"></image>
+    <text>待发货</text>
+  </view>
+  <image src="/static/images/mine0.png" class="mine_img2"></image>
+</navigator>
+<navigator url="/pages/mine/order/index?skip=3" hover-class="none" class="mine_nav">
+  <view class="nav_view">
+    <image src="/static/images/mine4.png" class="mine_img1"></image>
+    <text>待收货</text>
+  </view>
+  <image src="/static/images/mine0.png" class="mine_img2"></image>
+</navigator>
+<navigator url="/pages/mine/order/index?skip=4" hover-class="none" class="mine_nav mine_nav1">
+  <view class="nav_view">
+    <image src="/static/images/mine1.png" class="mine_img1"></image>
+    <text>已完成</text>
+  </view>
+  <image src="/static/images/mine0.png" class="mine_img2"></image>
+</navigator>
+
+
+ <navigator url="/pages/mine/card/membershipcard" hover-class="none" class="mine_nav mine_nav1"> 
+  <view class="nav_view">
+    <image src="/static/images/mine5.png" class="mine_img1"></image>
+    <text>会员卡</text>
+  </view>
+  <image src="/static/images/mine0.png" class="mine_img2"></image>
+</navigator>
+
+
+ <!-- <button class="contactbutton" hover-class="none" open-type="contact">
+  <view class="mine_nav">
+    <view class="nav_view">
+      <image src="/static/images/mine6.png" class="mine_img1"></image>
+      <text>客服</text>
+    </view>
+    <image src="/static/images/mine0.png" class="mine_img2"></image>
+  </view>
+</button>  -->
+
+<navigator url="/pages/mine/company/index" hover-class="none" class="mine_nav mine_nav1">
+  <view class="nav_view">
+    <image src="/static/images/tab3.png" class="mine_img1"></image>
+    <text>联系我们</text>
+  </view>
+  <image src="/static/images/mine0.png" class="mine_img2"></image>
+</navigator>
+
+<import src="../../common/footer.wxml" />
+<template is="footer_ugo" />
+

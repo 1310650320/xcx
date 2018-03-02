@@ -1,0 +1,155 @@
+/*顶部*/
+
+page {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home_topView {
+  width: 100%;
+  height: 427rpx;
+}
+.home_topView image{
+  width: 100%;
+  height: 100%;
+}
+.TopViewSwiper{
+  width: 100%;
+  height: 100%;
+}
+/*table*/
+
+.home_tabView {
+  width: 100%;
+  height: 210rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 16rpx solid #eee;
+  background-color: #fff;
+}
+
+.tab1 {
+  width: 110rpx;
+  height: 140rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab1 image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.tab1 text {
+  font-size: 27rpx;
+  color: #333;
+  width:130%;
+  text-align:center;
+}
+
+/*recommend*/
+
+.home_recommend {
+  width: 100%;
+  height: 68rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+  background-color: #fff;
+}
+.home_recommend1{ 
+  font-size: 12px;
+  color: #dad9d9;
+  margin-bottom: 17rpx;
+}
+.btoView{
+  padding: 14rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+/*production*/
+
+.home_productView {
+  width:337rpx;
+  height: 530rpx;
+  border-radius: 10rpx;
+  /* box-shadow: 0px 2rpx 6rpx 2rpx #e0e0e0; */
+  border: 2rpx solid #e0e0e0;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  margin-left: 11rpx;
+  margin-right: 11rpx;
+}
+
+.product_img1 {
+  border-radius: 10rpx;
+  width: 100%;
+  height: 335rpx;
+}
+
+.rightView {
+  height: 150rpx;
+  width:86%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left:35rpx;
+}
+
+.product_text1 {
+  height:36rpx;
+  font-size: 33rpx;
+  color: #333;
+  line-height: 36rpx;
+  padding-top: 5rpx;
+  display: block;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow:ellipsis;
+  text-overflow:-o-ellipsis-lastline;
+  overflow:hidden;
+  white-space: nowrap;
+}
+
+.product_text2 {
+  font-size: 16px;
+  color: #f75d5b;
+}
+
+.product_text3 {
+  width:100%;
+  height:50rpx;
+  font-size:24rpx;
+  line-height:50rpx;
+  text-align:left;
+  color: #737373;
+}
+.product_text4{
+  font-size: 13px;
+}
+.colBlackView{
+  width: 100%;
+  height: 10px;
+  background-color: #f6f6f6;
+}
+.tuijianwords{
+  margin-left: 10px;
+  border:1px solid #f9c56f;
+  width:29px;
+  font-size:13px;
+  border-radius:5px;
+  color:#f9c56f;
+  text-align:center;
+  padding-left:10rpx;
+padding-right:10rpx;
+}

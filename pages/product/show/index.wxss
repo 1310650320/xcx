@@ -1,0 +1,417 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+/*轮播*/
+
+.detail_swiper {
+  width: 100%;
+  height: 500rpx;
+}
+
+.detail_swiper swiper {
+  width: 100%;
+  height: 500rpx;
+}
+
+.detail_swiper image {
+  width: 100%;
+  height: 500rpx;
+}
+
+/*商品*/
+
+.detail_title {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+  border-bottom: 15rpx solid #f6f6f6;
+  padding-bottom: 10rpx;
+}
+
+.text1 {
+  font-size: 31rpx;
+  line-height: 40rpx;
+  color: #333;
+  padding-top: 30rpx;
+  width: 690rpx;
+}
+
+.text2 {
+  width: 700rpx;
+  font-size: 31rpx;
+  line-height: 40rpx;
+  color: #e12629;
+  padding-top: 10rpx;
+}
+
+.text2_t {
+  font-size: 40rpx;
+  line-height: 40rpx;
+  color: #e12629;
+  padding-top: 10rpx;
+}
+
+.text3 {
+  font-size: 23rpx;
+  color: #acacac;
+  padding-left: 35rpx;
+}
+
+/*规格*/
+
+.detail_norms {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 15rpx solid #f6f6f6;
+}
+
+.detail_norms text {
+  padding-left: 35rpx;
+  font-size: 31rpx;
+  color: #333;
+}
+
+.detail_norms image {
+  padding-right: 35rpx;
+  width: 17rpx;
+  height: 31rpx;
+}
+
+/*详情*/
+
+.detail_Detail {
+  margin-left: 30rpx;
+  margin-bottom: 110rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.text5 {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 42rpx;
+  padding-top: 40rpx;
+}
+
+.wxParse-p image {
+  width: 100% !important;
+  /* height: 100% !important; */
+}
+
+/*底部视图*/
+
+.detail_bottomView {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+}
+
+/*左边*/
+
+.leftView {
+  width: 248rpx;
+  height: 98rpx;
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid #e5e5e5;
+}
+
+.detail_home {
+  width: 50%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail_home1 {
+  border-left: 1rpx solid #e5e5e5;
+}
+
+.detail_home image {
+  width: 47rpx;
+  height: 39rpx;
+}
+
+.detail_home text {
+  font-size: 22rpx;
+  padding-top: 10rpx;
+}
+
+/*右边*/
+
+.rightView {
+  width: 500rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.shopping_tollery {
+  width: 50%;
+  height: 100rpx;
+  background-color: #ff9600;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+
+.shopping_buy {
+  width: 50%;
+  height: 100rpx;
+  background-color: #e4393c;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+
+/*遮罩*/
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*弹出视图*/
+
+.commodity_attr_box {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 2000;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/*商品信息*/
+
+.pop_topView {
+  height: 165rpx;
+  width: 690rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 30rpx;
+}
+
+.pop_topView_left {
+  height: 160rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.top_img1 {
+  margin-top: -50rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #e5e5e5;
+}
+
+.top_titleView {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-direction: column;
+  height: 165rpx;
+}
+
+.title_text1 {
+  font-size: 27rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 30rpx;
+}
+
+.title_text2 {
+  font-size: 27rpx;
+  color: #e12629;
+  padding-top: 30rpx;
+}
+
+.top_img2 {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+}
+
+/*商品规格*/
+
+.pop_norms {
+  width: 710rpx;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 25rpx;
+}
+
+.pop_norms text {
+  font-size: 27rpx;
+  color: #333;
+  padding-top: 30rpx;
+  padding-left: 30rpx;
+}
+
+.norms_itemView {
+  width: 710rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.item_none {
+  color: black;
+  text-align: center;
+  font-size: 25rpx !important;
+  height: 53rpx;
+  line-height: 55rpx;
+  background-color: #fff;
+  margin-top: 25rpx;
+  border-radius: 5rpx;
+  font-size: 18rpx;
+  padding: 0 25rpx 0 25rpx;
+  margin-left: 30rpx;
+  border: 1rpx solid #e5e5e5;
+}
+
+.item_sel {
+  color: #fff;
+  text-align: center;
+  font-size: 25rpx !important;
+  height: 55rpx;
+  line-height: 55rpx;
+  background-color: #e12629;
+  margin-top: 25rpx;
+  border-radius: 5rpx;
+  font-size: 18rpx;
+  padding: 0 25rpx 0 25rpx;
+  margin-left: 30rpx;
+}
+
+.purchaseView {
+  height: 119rpx;
+  width: 690rpx;
+  border-top: 1rpx solid #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.purchase_leftView {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+}
+
+.purchase_text1 {
+  font-size: 27rpx;
+}
+
+.purchase_text2 {
+  font-size: 23rpx;
+  color: #acacac;
+  padding-top: 15rpx;
+}
+
+.commodityNumView {
+  width: 240rpx;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid #e5e5e5;
+  align-items: center;
+  border-radius: 8rpx;
+}
+
+.disabled {
+  width: 80rpx;
+  height: 60rpx;
+  color: #333;
+  line-height: 60rpx;
+  text-align: center;
+  background: #e5e5e5;
+}
+
+.normal {
+  width: 80rpx;
+  height: 60rpx;
+  color: #333;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.addBtn {
+  width: 80rpx;
+  height: 60rpx;
+  color: #333;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.purchase_num {
+  width: 80rpx;
+  height: 60rpx;
+  border-left: 1rpx solid #e5e5e5;
+  border-right: 1rpx solid #e5e5e5;
+  text-align: center;
+}
+
+.pop_bottomView {
+  font-size: 30rpx;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.addToShoppingCart {
+  width: 50%;
+  height: 100rpx;
+  background-color: #ff9600;
+  color: #fff;
+  font-size: 27rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.pop_bottomView_navi {
+  width: 50%;
+  height: 100rpx;
+  background-color: #e4393c;
+  color: #fff;
+  font-size: 27rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.wxParse-strong {
+  font-weight: bold;
+}
